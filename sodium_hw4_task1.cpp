@@ -1,5 +1,5 @@
-// File: Abigail_Sturgeon_hw2_task1
-// Created by Abigail Sturgeon on 9/19/2017 for CS1410.
+// File: sodium_hw4_task1
+// Created by Abigail Sturgeon and Dayton Baxter on 10/10/2017 for CS1410.
 // Copyright (c) 2017 WSU
 
 #include <iostream>
