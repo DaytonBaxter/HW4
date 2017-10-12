@@ -19,12 +19,15 @@ public:
     {
         cout << "Please enter the street number: " << endl;
         cin >> streetNum;
+        cin.ignore();
 
         cout << "Please enter the street name: " << endl;
         cin >> streetName;
+        cin.ignore();
 
         cout << "Please enter the price: " << endl;
         cin >> price;
+        cin.ignore();
     }
     void showHouse(int houseNum)
     {
