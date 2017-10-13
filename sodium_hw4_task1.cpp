@@ -31,12 +31,40 @@ public:
     }
     void showHouse(int houseNum)
     {
-        cout << houseNum << " house at " << streetNum
+        cout << "House " << houseNum << " at " << streetNum
              << " " << streetName << " for $" << price << ".00." << endl;
     }
-    double returnPrice()
+    int comparePrice(houseInfo array[SIZE])
     {
-        return price;
+        if(array[0].price < array[1].price && array[0].price < array[2].price)
+        {
+            return 1;
+        }
+        if(array[1].price < array[0].price && array[1].price < array[2].price)
+        {
+            return 2;
+        }
+        if(array[2].price < array[1].price && array[2].price < array[0].price)
+        {
+            return 3;
+        }
+        if(array[0].price == array[1].price && array[0].price < array[2].price)
+        {
+            return 4;
+        }
+        if(array[0].price == array[2].price && array[0].price < array[1].price)
+        {
+            return 5;
+        }
+        if(array[2].price == array[1].price && array[2].price < array[0].price)
+        {
+            return 6;
+        }
+        if(array[0].price == array[1].price == array[2].price)
+        {
+            return 7;
+        }
+
     }
 
 };
@@ -61,6 +89,35 @@ int main()
     array[0].showHouse(1);
     array[1].showHouse(2);
     array[2].showHouse(3);
+
+    int comparison = h1.comparePrice(array);
+    switch(comparison)
+    {
+        case 1 :
+            cout << "House 1 is cheaper" << endl;
+            break;
+        case 2 :
+            cout << "House 2 is cheaper" << endl;
+            break;
+        case 3 :
+            cout << "House 3 is cheaper" << endl;
+            break;
+        case 4 :
+            cout << "House 1 and 2 are cheapest" << endl;
+            break;
+        case 5 :
+            cout << "House 1 and 3 are cheapest" << endl;
+            break;
+        case 6 :
+            cout << "House 2 and 3 are cheapest" << endl;
+            break;
+        case 7 :
+            cout << "The houses are all the same price" << endl;
+            break;
+        default:
+            cout << "Invalid comparison" << endl;
+    }
+
 
 
     return 0;
