@@ -3,11 +3,12 @@
 // Copyright (c) 2017 WSU
 
 #include <iostream>
-#include <string>
 using namespace std;
 
+// Constants
 const int SIZE = 3;
 
+// Classes
 class houseInfo
 {
 private:
@@ -34,40 +35,9 @@ public:
         cout << "House " << houseNum << " at " << streetNum
              << " " << streetName << " for $" << price << ".00." << endl;
     }
-    int comparePrice(houseInfo array[SIZE])
-    {
-        if(array[0].price < array[1].price && array[0].price < array[2].price)
-        {
-            return 1;
-        }
-        if(array[1].price < array[0].price && array[1].price < array[2].price)
-        {
-            return 2;
-        }
-        if(array[2].price < array[1].price && array[2].price < array[0].price)
-        {
-            return 3;
-        }
-        if(array[0].price == array[1].price && array[0].price < array[2].price)
-        {
-            return 4;
-        }
-        if(array[0].price == array[2].price && array[0].price < array[1].price)
-        {
-            return 5;
-        }
-        if(array[2].price == array[1].price && array[2].price < array[0].price)
-        {
-            return 6;
-        }
-        if(array[0].price == array[1].price == array[2].price)
-        {
-            return 7;
-        }
-
-    }
-
+    int comparePrice(houseInfo array[SIZE]);
 };
+
 
 int main()
 {
@@ -121,4 +91,38 @@ int main()
 
 
     return 0;
+}
+
+//Functions
+int houseInfo::comparePrice(houseInfo array[SIZE])
+{
+    if(array[0].price < array[1].price && array[0].price < array[2].price)
+    {
+        return 1;
+    }
+    if(array[1].price < array[0].price && array[1].price < array[2].price)
+    {
+        return 2;
+    }
+    if(array[2].price < array[1].price && array[2].price < array[0].price)
+    {
+        return 3;
+    }
+    if(array[0].price == array[1].price && array[0].price < array[2].price)
+    {
+        return 4;
+    }
+    if(array[0].price == array[2].price && array[0].price < array[1].price)
+    {
+        return 5;
+    }
+    if(array[2].price == array[1].price && array[2].price < array[0].price)
+    {
+        return 6;
+    }
+    if(array[0].price == array[1].price == array[2].price)
+    {
+        return 7;
+    }
+
 }
