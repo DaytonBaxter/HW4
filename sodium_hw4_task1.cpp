@@ -23,8 +23,7 @@ public:
         cin.ignore();
 
         cout << "Please enter the street name: " << endl;
-        cin >> streetName;
-        cin.ignore();
+        getline(cin, streetName);
 
         cout << "Please enter the price: " << endl;
         cin >> price;
@@ -73,13 +72,13 @@ int main()
             cout << "House 3 is cheaper" << endl;
             break;
         case 4 :
-            cout << "House 1 and 2 are cheapest" << endl;
+            cout << "Houses 1 and 2 are cheapest" << endl;
             break;
         case 5 :
-            cout << "House 1 and 3 are cheapest" << endl;
+            cout << "Houses 1 and 3 are cheapest" << endl;
             break;
         case 6 :
-            cout << "House 2 and 3 are cheapest" << endl;
+            cout << "Houses 2 and 3 are cheapest" << endl;
             break;
         case 7 :
             cout << "The houses are all the same price" << endl;
